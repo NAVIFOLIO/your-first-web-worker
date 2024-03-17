@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>Web Worker Demo</title>
+    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/eric-meyer-reset.css" type="text/css">
+    <link rel="stylesheet" href="./css/form-reset.css" type="text/css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+  </head>
+  <body>
+    <h1 id="title"><span>Your First&nbsp</span><span>Web Worker</span></h1>
+    <p id = "timer"></p>
+    <div id = "full-list-container">
+      <input id="full-list" type="checkbox" class="toggle">
+      <label class="full-list-label" for="full-list"><span>FULL GOODS LIST</span></label>
+      <div class="content"> 
+        <table id= "t-container-full-list">
+          <thead>
+            <th>Name</th><th>Value</th><th>Size</th>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div id = "container">
+      <div id = "no-worker">
+        <button class="no-worker">
+          <span><h2>In UI Thread</h2></span>
+        </button>
+        <div class="form-container">
+          <label for="capacity-no-worker">Capacity =</label>
+          <form name="frmNoWorker">
+            <input name="inputNoWorker" type="text" id="capacity-no-worker" value="???" />
+          </form>
+        </div>
+        <div class="typewriter-effect none">
+          <div class="text typewriter-text"></div>
+        </div>
+        <div class="result-container none"> 
+          <p class = "total-value">total value: <span></span></p>
+          <p class = "total-size">total size: <span></span></p>
+          <p>You Should Buy...</p>
+          <table id= "t-container-no-worker">
+            <thead>
+            <th>Name</th><th>Value</th><th>Size</th>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div id = "worker">
+        <button class ="worker">
+          <h2>In Web Worker</h2> 
+        </button>
+        <div class="form-container">
+          <label for="capacity-worker">Capacity =</label>
+          <form name="frmWorker">
+            <input name="inputWorker" type="text" id="capacity-worker" value="???" />
+          </form>
+        </div>
+        <div class="typewriter-effect none">
+          <div class="text typewriter-text"></div>
+        </div>
+        <div class="result-container none"> 
+          <p class = "total-value">total value: <span></span></p>
+          <p class = "total-size">total size: <span></span></p>
+          <p>You Should Buy...</p>
+          <table id= "t-container-worker">
+            <thead>
+            <th>Name</th><th>Value</th><th>Size</th>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <template id = "template-table">
+      <tr>
+        <td class="name"></td>
+        <td class="value"></td>
+        <td class="size"></td>
+      </tr>
+    </template>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

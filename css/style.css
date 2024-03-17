@@ -1,0 +1,313 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  
+  padding: 5vh 10px;
+
+  background: rgb(131,58,180);
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 55%, rgba(252,176,69,1) 100%);
+  color: #fff;
+  
+  font-family: 'Work Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+h1{
+  font-size: 5vw;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  font-weight: 900;
+  margin-bottom: 45px;
+}
+
+h1 > span {
+    display: inline-block;
+}
+
+h2 {
+  font-size: 3vw;
+  font-weight: bold;
+  line-height: 1;
+}
+
+table, th, td{
+  border:1px solid #fff;
+}
+
+th {
+  font-size: 18px;
+}
+
+td {
+  font-size: 15px;
+}
+
+th, td{
+    padding: 5px 10px;
+}
+
+#timer{
+    text-align: center;
+    font-size: 6vw;
+    margin-bottom: 50px;
+}
+
+#t-container-full-list{
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+}
+
+#worker, #no-worker{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    padding: 20px;
+    
+    border: 1px solid #fff;
+    text-align: center;
+}
+
+#worker > div.none, #no-worker > div.none{
+  display: none;
+}
+
+.result-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.result-container > p{
+  line-height: 1.4;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+button{ 
+  width: 100%;
+  
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  
+  border: 3px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+  
+  text-decoration: none;
+  text-align: center;
+  
+  transition: .1s;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.form-container > form{
+    padding-left: 10px;
+}
+
+.form-container > form > input{
+  height: 25px;
+  
+  padding: 1rem 0.75rem;
+  font-size: 18px;
+
+  background-color: #fff;
+  color:#212529;
+  border-radius: 3px;
+}
+.form-container > form > input:focus{
+  border-color:#ced4da;
+  box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+}
+
+.form-container > label{
+  line-height: 1.4;
+}
+
+.form-container > label::before{
+    font-family: "Font Awesome 6 Free";
+   content: "\f07a"; 
+   display: inline-block;
+   font-style: normal;
+    font-variant: normal;
+  text-rendering: auto;
+  
+  line-height: 1;
+  margin-right: 10px;
+}
+
+p.total-size{
+  margin-bottom: 30px;
+}
+
+.total-value::before{
+   font-family: "Font Awesome 6 Free";
+   content: "\f164"; 
+   display: inline-block;
+   font-style: normal;
+   font-variant: normal;
+text-rendering: auto;
+  line-height: 1;
+  margin-right: 10px;
+
+}
+
+.total-size::before{
+   font-family: "Font Awesome 6 Free";
+   content: "\f466"; 
+   display: inline-block;
+   font-style: normal;
+   font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  margin-right: 10px;
+}
+
+.typewriter-effect {
+  display: flex;
+  justify-content: center;
+}
+
+.typewriter-effect > .text {
+  max-width: 0;
+  animation: typing 1.5s steps(var(--characters)) infinite;
+  white-space: nowrap;
+  overflow: hidden;
+
+  font-size: 20px;
+}
+
+@keyframes typing {
+  75%,
+  100% {
+    max-width: calc(var(--characters) * 1ch);
+  }
+}
+
+@keyframes blink {
+  0%,
+  75%,
+  100% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+}
+
+/* acordian full goods menu START*/
+#full-list-container{
+  text-align: center;
+}
+.toggle {
+	display: none;
+}
+.full-list-label{		/*タイトル*/
+	padding: 1em;
+	display: inline-block;
+	color: #fff;
+	background: transparent;
+  border: 2px solid #fff;
+  min-width: 250px;
+  max-width: 400px;
+}
+.full-list-label::before{		/*タイトル横の矢印*/
+	content:"";
+	width: 6px;
+	height: 6px;
+	border-top: 2px solid #fff;
+	border-right: 2px solid #fff;
+	-webkit-transform: rotate(45deg);
+	position: absolute;
+	top:calc( 50% - 3px );
+	right: 20px;
+	transform: rotate(135deg);
+}
+.full-list-label,
+.content {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transform: translateZ(0);
+	transition: all 0.3s;
+}
+.content {		/*本文*/
+	height: 0;
+	margin-bottom:10px;
+	padding:0 20px;
+	overflow: hidden;
+}
+.toggle:checked + .full-list-label + .content {	/*開閉時*/
+	height: auto;
+	padding:20px ;
+	transition: all .3s;
+}
+.toggle:checked + .full-list-label::before {
+	transform: rotate(-45deg) !important;
+}
+
+label.full-list-label > span::before{
+  font-family: "Font Awesome 6 Free";
+  content: "\f02d"; 
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  margin-right: 10px;
+}
+
+/* acordian full goods menu END */
+
+@media screen and (max-width:786px){
+    h2{
+      font-size: 6vw;
+    }
+    button{
+      padding: 8px 10px;
+    }
+    #container,
+    .form-container{
+        flex-direction: column;
+    }
+    .form-container > label {
+      margin-bottom: 10px;
+    }
+}
+
+@media (hover: hover){
+    button:hover{
+        border-radius: 30px;
+    }    
+}
+
+@media (hover: none){
+    button:active{
+        border-radius: 15px;
+    }
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 1;
+    transform: scale(0.0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.0);
+  }
+}
